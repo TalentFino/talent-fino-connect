@@ -59,7 +59,15 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" size="sm" className="w-full group-hover:border-primary group-hover:text-primary transition-smooth">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full group-hover:border-primary group-hover:text-primary transition-smooth"
+                onClick={() => {
+                  const serviceSlug = service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                  window.location.href = `/learn-more?service=${serviceSlug}`;
+                }}
+              >
                 Learn More
               </Button>
             </Card>

@@ -26,20 +26,20 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li><a href="#" className="hover:text-accent transition-smooth">Executive Search</a></li>
-              <li><a href="#" className="hover:text-accent transition-smooth">Contract Staffing</a></li>
-              <li><a href="#" className="hover:text-accent transition-smooth">Permanent Placement</a></li>
-              <li><a href="#" className="hover:text-accent transition-smooth">Talent Consulting</a></li>
+              <li><a href="/learn-more?service=executive-search" className="hover:text-accent transition-smooth">Executive Search</a></li>
+              <li><a href="/learn-more?service=contract-staffing" className="hover:text-accent transition-smooth">Contract Staffing</a></li>
+              <li><a href="/learn-more?service=direct-staffing" className="hover:text-accent transition-smooth">Permanent Placement</a></li>
+              <li><a href="/learn-more?service=headhunting" className="hover:text-accent transition-smooth">Headhunting</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li><a href="#" className="hover:text-accent transition-smooth">About Us</a></li>
-              <li><a href="#" className="hover:text-accent transition-smooth">Case Studies</a></li>
-              <li><a href="#" className="hover:text-accent transition-smooth">Careers</a></li>
-              <li><a href="#" className="hover:text-accent transition-smooth">Contact</a></li>
+              <li><a href="/about" className="hover:text-accent transition-smooth">About Us</a></li>
+              <li><a href="/case-studies" className="hover:text-accent transition-smooth">Case Studies</a></li>
+              <li><a href="/services" className="hover:text-accent transition-smooth">Services</a></li>
+              <li><a href="#contact" className="hover:text-accent transition-smooth">Contact</a></li>
             </ul>
           </div>
         </div>
