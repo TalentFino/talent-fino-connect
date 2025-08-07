@@ -4,24 +4,29 @@ import { Button } from "@/components/ui/button";
 const Services = () => {
   const services = [
     {
+      title: "Direct Staffing (Permanent Placement)",
+      description: "We source, screen, and place full-time employees who bring lasting value to your business. Our process ensures cultural alignment, technical competency, and long-term success.",
+      features: ["Cultural alignment", "Technical competency", "Long-term success", "Comprehensive screening"]
+    },
+    {
       title: "Executive Search",
-      description: "Find top-tier leadership talent for your organization's most critical positions.",
-      features: ["C-level executives", "Senior management", "Specialized roles", "Confidential searches"]
+      description: "Our executive recruiters identify and secure top-tier leaders who can drive business transformation. We focus on leadership qualities, industry experience, and strategic vision.",
+      features: ["Top-tier leaders", "Business transformation", "Leadership qualities", "Strategic vision"]
+    },
+    {
+      title: "Headhunting",
+      description: "We proactively reach out to passive candidates—professionals not actively seeking roles but who perfectly fit your requirements.",
+      features: ["Passive candidates", "Proactive outreach", "Perfect fit matching", "Hidden talent access"]
     },
     {
       title: "Contract Staffing",
-      description: "Flexible staffing solutions for temporary, contract, and project-based needs.",
-      features: ["Project specialists", "Temporary coverage", "Flexible terms", "Quick deployment"]
+      description: "Flexible workforce solutions for short-term projects, seasonal needs, or specialized expertise—delivered quickly to keep your operations running smoothly.",
+      features: ["Short-term projects", "Seasonal needs", "Specialized expertise", "Quick delivery"]
     },
     {
-      title: "Permanent Placement",
-      description: "Full-time recruitment services across all industries and experience levels.",
-      features: ["Industry expertise", "Cultural fit", "Long-term success", "Comprehensive screening"]
-    },
-    {
-      title: "Talent Consulting",
-      description: "Strategic workforce planning and talent acquisition consulting services.",
-      features: ["Workforce strategy", "Market insights", "Process optimization", "Talent analytics"]
+      title: "Resume Sourcing",
+      description: "Access a pre-qualified talent pipeline that reduces your time-to-hire and ensures you're always ready to fill critical roles.",
+      features: ["Pre-qualified talent", "Reduced time-to-hire", "Critical role readiness", "Talent pipeline access"]
     }
   ];
 
@@ -33,28 +38,28 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Comprehensive recruitment solutions tailored to your unique needs
+            Professional Recruitment & Staffing - We offer a full spectrum of staffing services to help organizations fill permanent, temporary, and project-based roles.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="p-8 shadow-card hover:shadow-elegant transition-smooth animate-scale-in group">
-              <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-smooth">
+            <Card key={index} className="p-6 shadow-card hover:shadow-elegant transition-smooth animate-scale-in group">
+              <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-smooth">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
                 {service.description}
               </p>
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1 mb-4">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                    <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
+                  <li key={featureIndex} className="flex items-center text-xs text-muted-foreground">
+                    <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full group-hover:border-primary group-hover:text-primary transition-smooth">
+              <Button variant="outline" size="sm" className="w-full group-hover:border-primary group-hover:text-primary transition-smooth">
                 Learn More
               </Button>
             </Card>
@@ -63,14 +68,14 @@ const Services = () => {
         
         <div className="text-center animate-fade-up">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-            Custom Solutions for Every Industry
+            Full Spectrum Staffing Solutions
           </h3>
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-            We don't believe in "one-size-fits-all" staffing. Our solutions are tailored to your 
-            industry, company culture, and specific requirements.
+            From permanent placements to contract staffing, we deliver the right talent 
+            solutions to meet your unique business requirements.
           </p>
           <Button variant="hero" size="lg">
-            Discuss Your Needs
+            Discuss Your Staffing Needs
           </Button>
         </div>
       </div>

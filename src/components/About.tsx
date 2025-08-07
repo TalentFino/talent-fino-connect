@@ -15,7 +15,7 @@ const About = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
           <div className="animate-fade-up">
             <h3 className="text-3xl font-bold mb-6 text-foreground">
               We understand that every hiring challenge is unique
@@ -25,10 +25,33 @@ const About = () => {
               organizations with exceptional talent across industries. We understand that every 
               hiring challenge is unique—so we don't believe in "one-size-fits-all" staffing.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Our approach combines global reach with local expertise, ensuring we find the 
-              perfect match for your organization's specific needs and culture.
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Our approach blends strategic workforce planning, deep industry expertise, and access 
+              to a global talent network to deliver direct hire, executive search, contract staffing, 
+              and resume sourcing solutions that meet your needs today while preparing you for tomorrow.
             </p>
+            
+            <h4 className="text-xl font-semibold mb-4 text-foreground">
+              Why Clients Choose Talent Fino:
+            </h4>
+            <ul className="space-y-3 text-muted-foreground">
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-accent rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                <span><span className="font-semibold text-foreground">Tailored Staffing Strategies</span> – Every hiring solution is designed to match your specific role requirements, culture, and growth plans.</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-accent rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                <span><span className="font-semibold text-foreground">Fast & Reliable Delivery</span> – We connect you with qualified, vetted candidates quickly—without compromising on quality.</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-accent rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                <span><span className="font-semibold text-foreground">Industry-Specific Recruiters</span> – Our team understands the skills and trends driving your sector.</span>
+              </li>
+              <li className="flex items-start">
+                <div className="w-2 h-2 bg-accent rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                <span><span className="font-semibold text-foreground">End-to-End Hiring Support</span> – From role definition to onboarding, we manage the entire recruitment lifecycle.</span>
+              </li>
+            </ul>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -60,11 +83,10 @@ const About = () => {
         
         <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 md:p-12 text-center animate-fade-up">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-            Ready to Transform Your Hiring Process?
+            More Than Just Candidates
           </h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Let's discuss how our customized recruitment solutions can help you find 
-            the exceptional talent your organization needs.
+            With Talent Fino, you gain more than just candidates, you gain a long-term talent partner.
           </p>
         </div>
       </div>
