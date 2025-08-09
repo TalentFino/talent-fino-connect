@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import GetStartedDialog from "@/components/GetStartedDialog";
 
 const Header = () => {
   return (
@@ -24,9 +24,7 @@ const Header = () => {
             </a>
           </div>
           
-          <Button variant="hero" size="sm">
-            Get Started
-          </Button>
+          <GetStartedDialog triggerVariant="hero" triggerSize="sm" />
         </nav>
       </div>
     </header>
