@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import ScheduleConsultationDialog from "@/components/ScheduleConsultationDialog";
+
 
 const Contact = () => {
   return (
@@ -73,9 +75,7 @@ const Contact = () => {
             </p>
             
             <div className="space-y-4">
-              <Button variant="hero" size="lg" className="w-full">
-                Schedule Free Consultation
-              </Button>
+              <ScheduleConsultationDialog triggerVariant="hero" triggerSize="lg" triggerClassName="w-full" />
               <Button variant="outline" size="lg" className="w-full">
                 Download Our Brochure
               </Button>

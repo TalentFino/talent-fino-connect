@@ -31,6 +31,7 @@ import { toast } from "@/hooks/use-toast";
 interface ScheduleConsultationDialogProps {
   triggerVariant?: ButtonProps["variant"];
   triggerSize?: ButtonProps["size"];
+  triggerClassName?: string;
 }
 
 type FormValues = {
@@ -52,6 +53,7 @@ const durations = ["15", "30", "45", "60"] as const;
 const ScheduleConsultationDialog: React.FC<ScheduleConsultationDialogProps> = ({
   triggerVariant = "outline",
   triggerSize = "sm",
+  triggerClassName,
 }) => {
   const browserTz = React.useMemo(() =>
     Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC",
@@ -84,7 +86,7 @@ const ScheduleConsultationDialog: React.FC<ScheduleConsultationDialogProps> = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant={triggerVariant} size={triggerSize}>Schedule Free Consultation</Button>
+        <Button variant={triggerVariant} size={triggerSize} className={triggerClassName}>Schedule Free Consultation</Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
