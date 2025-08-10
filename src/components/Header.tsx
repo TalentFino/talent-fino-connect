@@ -1,4 +1,6 @@
 import GetStartedDialog from "@/components/GetStartedDialog";
+import ScheduleConsultationDialog from "@/components/ScheduleConsultationDialog";
+
 
 const Header = () => {
   return (
@@ -24,7 +26,10 @@ const Header = () => {
             </a>
           </div>
           
-          <GetStartedDialog triggerVariant="hero" triggerSize="sm" />
+          <div className="flex items-center gap-3">
+            <ScheduleConsultationDialog triggerVariant="outline" triggerSize="sm" />
+            <GetStartedDialog triggerVariant="hero" triggerSize="sm" />
+          </div>
         </nav>
       </div>
     </header>
