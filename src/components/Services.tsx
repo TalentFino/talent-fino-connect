@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
+import GetStartedDialog from "@/components/GetStartedDialog";
 const Services = () => {
   const services = [
     {
@@ -82,9 +82,7 @@ const Services = () => {
             From permanent placements to contract staffing, we deliver the right talent 
             solutions to meet your unique business requirements.
           </p>
-          <Button variant="hero" size="lg">
-            Discuss Your Staffing Needs
-          </Button>
+          <GetStartedDialog triggerVariant="hero" triggerSize="lg" />
         </div>
       </div>
     </section>
