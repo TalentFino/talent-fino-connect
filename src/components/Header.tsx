@@ -1,15 +1,15 @@
 import GetStartedDialog from "@/components/GetStartedDialog";
 import ScheduleConsultationDialog from "@/components/ScheduleConsultationDialog";
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+          <Link to="/" aria-label="Go to homepage" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             Talent Fino
-          </div>
+          </Link>
           
           <div className="hidden md:flex items-center space-x-8">
             <a href="/about" className="text-foreground hover:text-primary transition-smooth">
