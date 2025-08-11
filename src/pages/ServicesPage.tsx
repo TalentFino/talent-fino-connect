@@ -2,33 +2,41 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
+import { PAGE_SEO_CONFIGS } from "@/lib/seo/constants";
+import { Breadcrumb, BreadcrumbConfigs } from "@/components/Breadcrumb";
+import { RelatedLinks, RelatedLinksData } from "@/components/RelatedLinks";
+import { ServiceLinks, IndustryLinks } from "@/components/SEOLink";
 
 const ServicesPage = () => {
+  const servicesSEO = PAGE_SEO_CONFIGS.services;
+
   const services = [
     {
-      title: "Direct Staffing (Permanent Placement)",
-      description: "We source, screen, and place full-time employees who bring lasting value to your business. Our process ensures cultural alignment, technical competency, and long-term success.",
+      title: "Direct Staffing & Permanent Placement Services",
+      description: "Professional direct staffing solutions for permanent placement needs. We source, screen, and place full-time employees who bring lasting value to your business. Our comprehensive recruitment process ensures cultural alignment, technical competency, and long-term success for direct hire positions.",
       features: [
         "Comprehensive candidate screening and assessment",
-        "Cultural fit evaluation and compatibility testing",
+        "Cultural fit evaluation and compatibility testing", 
         "Technical competency validation",
         "Reference verification and background checks",
         "Onboarding support and integration assistance",
-        "90-day success guarantee"
+        "90-day success guarantee for permanent placements"
       ],
       process: [
         "Role Analysis & Requirements Gathering",
         "Targeted Candidate Sourcing",
-        "Multi-Stage Interview Process",
+        "Multi-Stage Interview Process", 
         "Final Selection & Offer Negotiation"
-      ]
+      ],
+      slug: "direct-staffing-permanent-placement"
     },
     {
-      title: "Executive Search",
-      description: "Our executive recruiters identify and secure top-tier leaders who can drive business transformation. We focus on leadership qualities, industry experience, and strategic vision.",
+      title: "Executive Search & Leadership Recruitment",
+      description: "Specialized executive search services and C-level recruitment solutions. Our executive recruiters identify and secure top-tier leaders who can drive business transformation. We focus on leadership qualities, industry experience, and strategic vision for senior executive positions.",
       features: [
         "C-suite and senior leadership placement",
-        "Confidential search capabilities",
+        "Confidential executive search capabilities",
         "Leadership assessment and evaluation",
         "Strategic vision alignment",
         "Industry expertise and network access",
@@ -36,14 +44,15 @@ const ServicesPage = () => {
       ],
       process: [
         "Strategic Role Definition",
-        "Market Mapping & Research",
+        "Market Mapping & Research", 
         "Executive Identification & Approach",
         "Leadership Assessment & Placement"
-      ]
+      ],
+      slug: "executive-search-leadership-recruitment"
     },
     {
-      title: "Headhunting",
-      description: "We proactively reach out to passive candidates—professionals not actively seeking roles but who perfectly fit your requirements.",
+      title: "Professional Headhunting Services",
+      description: "Expert headhunting and candidate sourcing for hard-to-fill positions. We proactively reach out to passive candidates—professionals not actively seeking roles but who perfectly fit your specialized requirements and industry needs.",
       features: [
         "Passive candidate identification",
         "Discrete approach and engagement",
@@ -55,13 +64,14 @@ const ServicesPage = () => {
       process: [
         "Target Profile Development",
         "Market Research & Mapping",
-        "Discrete Candidate Approach",
+        "Discrete Candidate Approach", 
         "Relationship Building & Placement"
-      ]
+      ],
+      slug: "professional-headhunting-services"
     },
     {
-      title: "Contract Staffing",
-      description: "Flexible workforce solutions for short-term projects, seasonal needs, or specialized expertise—delivered quickly to keep your operations running smoothly.",
+      title: "Contract Staffing & Temporary Solutions",
+      description: "Flexible contract staffing and temporary workforce solutions for short-term projects, seasonal needs, or specialized expertise. Our contract recruitment services are delivered quickly to keep your operations running smoothly with qualified temporary staff.",
       features: [
         "Rapid deployment capabilities",
         "Flexible contract terms",
@@ -75,11 +85,12 @@ const ServicesPage = () => {
         "Rapid Candidate Mobilization",
         "Contract Setup & Deployment",
         "Ongoing Support & Management"
-      ]
+      ],
+      slug: "contract-staffing-temporary-solutions"
     },
     {
-      title: "Resume Sourcing",
-      description: "Access a pre-qualified talent pipeline that reduces your time-to-hire and ensures you're always ready to fill critical roles.",
+      title: "Resume Sourcing & Talent Pipeline Development",
+      description: "Professional resume sourcing and candidate database services. Access a pre-qualified talent pipeline that reduces your time-to-hire and ensures you're always ready to fill critical roles with top-quality candidates from our extensive recruitment network.",
       features: [
         "Pre-qualified talent database",
         "AI-powered candidate matching",
@@ -93,23 +104,38 @@ const ServicesPage = () => {
         "Candidate Pre-qualification",
         "Skills Assessment & Ranking",
         "Rapid Candidate Presentation"
-      ]
+      ],
+      slug: "resume-sourcing-talent-pipeline"
     }
   ];
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={servicesSEO.title}
+        description={servicesSEO.description}
+        keywords={servicesSEO.keywords}
+        path="/services"
+        structuredData={servicesSEO.structuredData}
+      />
       <Header />
       
+      {/* Breadcrumb Navigation */}
+      <section className="pt-24 pb-4 bg-background">
+        <div className="container mx-auto px-6">
+          <Breadcrumb items={BreadcrumbConfigs.services} />
+        </div>
+      </section>
+
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-hero text-primary-foreground">
+      <section className="pb-16 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center animate-fade-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our Services
+              Professional Recruitment & Staffing Services
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-              Professional Recruitment & Staffing Solutions Tailored to Your Needs
+              Comprehensive recruitment solutions including executive search, direct staffing, and contract staffing services tailored to your business needs
             </p>
           </div>
         </div>
@@ -142,8 +168,13 @@ const ServicesPage = () => {
                       ))}
                     </ul>
                     
-                    <Button variant="hero" size="lg">
-                      Get Started
+                    <Button 
+                      variant="hero" 
+                      size="lg"
+                      onClick={() => window.location.href = `/learn-more?service=${service.slug}`}
+                      aria-label={`Learn more about ${service.title}`}
+                    >
+                      Get Started with {service.title.split(' ')[0]} {service.title.split(' ')[1]}
                     </Button>
                   </div>
                   
@@ -178,21 +209,65 @@ const ServicesPage = () => {
           {/* CTA Section */}
           <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 md:p-12 text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-              Need a Custom Solution?
+              Need Custom Recruitment Solutions?
             </h3>
             <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-              We understand that every organization has unique requirements. Let's discuss 
-              how we can create a tailored recruitment solution that meets your specific needs.
+              We understand that every organization has unique staffing requirements. Let's discuss 
+              how we can create tailored recruitment and staffing solutions that meet your specific business needs across all industries.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
-                Schedule Consultation
+              <Button 
+                variant="hero" 
+                size="lg"
+                onClick={() => window.location.href = '/'}
+                aria-label="Schedule a consultation for custom recruitment solutions"
+              >
+                Schedule Recruitment Consultation
               </Button>
-              <Button variant="outline" size="lg">
-                Download Service Guide
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => window.location.href = '/about'}
+                className="text-primary"
+                aria-label="Learn more about our recruitment expertise"
+              >
+                Learn About Our Expertise
               </Button>
             </div>
+            
+            {/* SEO-optimized internal linking section */}
+            <div className="mt-12 pt-8 border-t border-border">
+              <h4 className="text-lg font-semibold mb-4 text-foreground">
+                Explore Our Industry-Specific Recruitment Services
+              </h4>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <IndustryLinks.Manufacturing className="text-primary hover:text-primary/80 underline">
+                  Manufacturing Recruitment Services
+                </IndustryLinks.Manufacturing>
+                <IndustryLinks.Healthcare className="text-primary hover:text-primary/80 underline">
+                  Healthcare Staffing Solutions
+                </IndustryLinks.Healthcare>
+                <IndustryLinks.Automotive className="text-primary hover:text-primary/80 underline">
+                  Automotive Industry Recruitment
+                </IndustryLinks.Automotive>
+                <IndustryLinks.Aerospace className="text-primary hover:text-primary/80 underline">
+                  Aerospace & Defense Staffing
+                </IndustryLinks.Aerospace>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Related Links Section */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-6">
+          <RelatedLinks 
+            title="Explore Related Services & Industries"
+            links={RelatedLinksData.servicesPageLinks}
+            variant="card"
+            className="max-w-6xl mx-auto"
+          />
         </div>
       </section>
       

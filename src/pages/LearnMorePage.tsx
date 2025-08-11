@@ -3,17 +3,21 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLocation } from "react-router-dom";
+import { SEO } from "@/components/SEO";
+import { PAGE_SEO_CONFIGS } from "@/lib/seo/constants";
 
 const LearnMorePage = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const service = searchParams.get('service') || 'general';
   
+  const learnMoreSEO = PAGE_SEO_CONFIGS['learn-more'];
+  
   const serviceDetails = {
     'direct-staffing': {
       title: 'Direct Staffing (Permanent Placement)',
-      subtitle: 'Building Long-Term Success Through Strategic Permanent Placements',
-      description: 'Our direct staffing service goes beyond traditional recruitment. We partner with you to understand your organizational culture, growth objectives, and long-term vision to place professionals who will contribute to your success for years to come.',
+      subtitle: 'Building Long-Term Success Through Strategic Permanent Recruitment Placements',
+      description: 'Our direct staffing service goes beyond traditional recruitment solutions. We partner with you to understand your organizational culture, growth objectives, and long-term vision to place exceptional professionals through our comprehensive talent acquisition process who will contribute to your success for years to come.',
       benefits: [
         'Comprehensive cultural fit assessment',
         'Technical competency validation',
@@ -199,9 +203,54 @@ const LearnMorePage = () => {
   };
   
   const currentService = serviceDetails[service] || serviceDetails.general;
+  
+  // Generate dynamic SEO based on service parameter
+  const dynamicTitle = service !== 'general' 
+    ? `${currentService.title} - Learn More | Talent Fino`
+    : learnMoreSEO.title;
+    
+  const dynamicDescription = service !== 'general'
+    ? `Learn more about our ${currentService.title.toLowerCase()} services. ${currentService.description.substring(0, 100)}...`
+    : learnMoreSEO.description;
+    
+  const dynamicKeywords = service !== 'general'
+    ? [...learnMoreSEO.keywords, service.replace('-', ' '), currentService.title.toLowerCase()]
+    : learnMoreSEO.keywords;
+
+  // Structured data for service details
+  const serviceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": currentService.title,
+    "description": currentService.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Talent Fino"
+    },
+    "serviceType": "Recruitment and Staffing",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Recruitment Services",
+      "itemListElement": currentService.benefits.map((benefit, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": benefit
+        }
+      }))
+    }
+  };
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title={dynamicTitle}
+        description={dynamicDescription}
+        keywords={dynamicKeywords}
+        path={`/learn-more${service !== 'general' ? `?service=${service}` : ''}`}
+        structuredData={serviceStructuredData}
+      />
       <Header />
       
       {/* Hero Section */}
@@ -226,14 +275,14 @@ const LearnMorePage = () => {
             <div className="grid lg:grid-cols-2 gap-16 mb-20">
               <div className="animate-fade-up">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-                  Service Overview
+                  Recruitment Service Overview
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                   {currentService.description}
                 </p>
                 
                 <h3 className="text-2xl font-semibold mb-6 text-foreground">
-                  Key Benefits & Features
+                  Key Recruitment Benefits & Staffing Features
                 </h3>
                 <ul className="space-y-4">
                   {currentService.benefits.map((benefit, index) => (
@@ -247,7 +296,7 @@ const LearnMorePage = () => {
               
               <Card className="p-8 shadow-elegant animate-scale-in">
                 <h3 className="text-2xl font-semibold mb-6 text-foreground">
-                  Our Proven Process
+                  Our Proven Recruitment Process
                 </h3>
                 <div className="space-y-6">
                   {currentService.process.map((step, index) => (
@@ -268,7 +317,7 @@ const LearnMorePage = () => {
             {/* Why Choose Us */}
             <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 md:p-12 mb-20">
               <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center text-foreground">
-                Why Choose Talent Fino?
+                Why Choose Talent Fino for Recruitment Services?
               </h3>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
@@ -300,11 +349,11 @@ const LearnMorePage = () => {
             {/* CTA Section */}
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                Ready to Get Started?
+                Ready to Get Started with Our Recruitment Services?
               </h3>
               <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
                 Let's discuss how our {currentService.title.toLowerCase()} service can help you 
-                achieve your talent acquisition goals and drive business success.
+                achieve your talent acquisition and staffing goals to drive business success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg">

@@ -2,8 +2,45 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
+import { PAGE_SEO_CONFIGS } from "@/lib/seo/constants";
+import { Breadcrumb, BreadcrumbConfigs } from "@/components/Breadcrumb";
 
 const CaseStudiesPage = () => {
+  const caseStudiesSEO = PAGE_SEO_CONFIGS['case-studies'];
+  
+  // Structured data for case studies page
+  const caseStudiesStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Recruitment Success Stories & Case Studies",
+    "description": "Real client success stories showcasing our recruitment and staffing expertise across industries",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "Article",
+          "@id": "#manufacturing-case-study",
+          "name": "Global Manufacturing Scale-Up Success",
+          "description": "50 engineers placed across 3 countries in 8 weeks with 95% retention rate"
+        },
+        {
+          "@type": "Article", 
+          "@id": "#automotive-case-study",
+          "name": "Automotive Innovation Team Recruitment",
+          "description": "12 senior EV specialists recruited with 100% confidentiality maintained"
+        },
+        {
+          "@type": "Article",
+          "@id": "#healthcare-case-study", 
+          "name": "Healthcare System Expansion Staffing",
+          "description": "200+ healthcare professionals placed with 100% regulatory compliance"
+        }
+      ]
+    }
+  };
+
   const caseStudies = [
     {
       title: "Global Manufacturing Scale-Up",
@@ -99,17 +136,31 @@ const CaseStudiesPage = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title={caseStudiesSEO.title}
+        description={caseStudiesSEO.description}
+        keywords={caseStudiesSEO.keywords}
+        path="/case-studies"
+        structuredData={caseStudiesStructuredData}
+      />
       <Header />
       
+      {/* Breadcrumb Navigation */}
+      <section className="pt-24 pb-4 bg-background">
+        <div className="container mx-auto px-6">
+          <Breadcrumb items={BreadcrumbConfigs.caseStudies} />
+        </div>
+      </section>
+      
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-hero text-primary-foreground">
+      <section className="pb-16 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center animate-fade-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Case Studies
+              Recruitment Success Stories & Case Studies
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-              Real Success Stories from Our Client Partnerships
+              Real Client Success Stories from Our Recruitment & Staffing Partnerships
             </p>
           </div>
         </div>
@@ -136,17 +187,17 @@ const CaseStudiesPage = () => {
                     
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-xl font-semibold mb-3 text-foreground">The Challenge</h3>
+                        <h3 className="text-xl font-semibold mb-3 text-foreground">The Recruitment Challenge</h3>
                         <p className="text-muted-foreground leading-relaxed">{study.challenge}</p>
                       </div>
                       
                       <div>
-                        <h3 className="text-xl font-semibold mb-3 text-foreground">Our Solution</h3>
+                        <h3 className="text-xl font-semibold mb-3 text-foreground">Our Staffing Solution</h3>
                         <p className="text-muted-foreground leading-relaxed">{study.solution}</p>
                       </div>
                       
                       <div>
-                        <h3 className="text-xl font-semibold mb-3 text-foreground">Results Achieved</h3>
+                        <h3 className="text-xl font-semibold mb-3 text-foreground">Recruitment Results Achieved</h3>
                         <ul className="space-y-2">
                           {study.results.map((result, resultIndex) => (
                             <li key={resultIndex} className="flex items-start">
@@ -228,11 +279,11 @@ const CaseStudiesPage = () => {
           {/* CTA Section */}
           <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 md:p-12 text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-              Ready to Become Our Next Success Story?
+              Ready to Become Our Next Recruitment Success Story?
             </h3>
             <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-              See how our expertise and proven methodology can help you achieve 
-              similar results in your organization's talent acquisition goals.
+              See how our recruitment expertise and proven staffing methodology can help you achieve 
+              similar results in your organization's talent acquisition and staffing goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg">

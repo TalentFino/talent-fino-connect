@@ -123,7 +123,7 @@ const GetStartedDialog: React.FC<GetStartedDialogProps> = ({
       <DialogTrigger asChild>
         <Button variant={triggerVariant} size={triggerSize}>Get Started</Button>
       </DialogTrigger>
-      <DialogContent className="max-w-3xl">
+      <DialogContent className="max-w-3xl max-h-[90%] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Start a Staffing Partnership</DialogTitle>
           <DialogDescription>
