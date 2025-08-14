@@ -36,7 +36,7 @@ const Hero = () => {
               </Button>
             </SEOLinks.Services>
             <SEOLinks.About>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto border-primary-foreground  hover:bg-primary-foreground text-secondary">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 Learn About Our Expertise
               </Button>
             </SEOLinks.About>
