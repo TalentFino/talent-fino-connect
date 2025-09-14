@@ -25,7 +25,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/company/talentfino"
+                href="https://www.linkedin.com/company/talentfino-consulting/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-primary-light rounded-lg flex items-center justify-center hover:bg-accent transition-smooth"
