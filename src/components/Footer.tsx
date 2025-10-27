@@ -116,6 +116,23 @@ const Footer = () => {
           </div>
 
           <div className="text-center text-primary-foreground/60 text-sm">
+            <div className="flex justify-center gap-6 mb-3">
+              <SEOLink
+                to="/privacy-policy"
+                keywords={['privacy policy', 'data protection']}
+                className="hover:text-accent transition-colors"
+              >
+                Privacy Policy
+              </SEOLink>
+              <span>|</span>
+              <SEOLink
+                to="/terms-and-conditions"
+                keywords={['terms and conditions', 'service agreement']}
+                className="hover:text-accent transition-colors"
+              >
+                Terms & Conditions
+              </SEOLink>
+            </div>
             <p>&copy; 2025 Talent Fino. All rights reserved. | Global Recruitment Solutions & Staffing Services | Where Talent Meets Excellence</p>
           </div>
         </div>
