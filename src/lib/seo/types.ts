@@ -22,7 +22,8 @@ export interface PageSEO {
   ogImage?: string;
   structuredData?: {
     "@context": string;
-    "@type": string;
+    "@type"?: string;
+    "@graph"?: any[];
     [key: string]: any;
   };
 }

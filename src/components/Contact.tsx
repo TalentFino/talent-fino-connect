@@ -47,7 +47,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Call Us</h4>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+1 (307) 384-8094</p>
+                  <p className="text-muted-foreground">+1 (307) 384-8117</p>
                 </div>
               </div>
               
@@ -60,7 +61,10 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Visit Us</h4>
-                  <p className="text-muted-foreground">Global offices serving clients worldwide</p>
+                  <p className="text-muted-foreground">
+                    30 N Gould St, STE R, Sheridan,
+                  </p>
+                  <p  className="text-muted-foreground"> WY 82801, USA</p>
                 </div>
               </div>
             </div>

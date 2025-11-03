@@ -7,6 +7,7 @@ import { Button, type ButtonProps } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
   DialogContent,
@@ -22,6 +23,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
+  FormDescription,
 } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -45,6 +47,7 @@ type FormValues = {
   meetingMode?: string;
   notes?: string;
   duration?: string; // 15, 30, 45, 60
+  smsConsent?: boolean;
 };
 
 const meetingModes = ["Google Meet", "Zoom", "Phone", "In-person"] as const;
@@ -71,6 +74,7 @@ const ScheduleConsultationDialog: React.FC<ScheduleConsultationDialogProps> = ({
       meetingMode: "",
       notes: "",
       duration: "30",
+      smsConsent: false,
     },
   });
 
@@ -279,6 +283,32 @@ const ScheduleConsultationDialog: React.FC<ScheduleConsultationDialogProps> = ({
                     <Textarea rows={4} placeholder="Share context or goals for the call" {...field} />
                   </FormControl>
                   <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="smsConsent"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border border-border p-4 bg-muted/30">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel className="text-sm font-medium">
+                      SMS Consent (Optional)
+                    </FormLabel>
+                    <FormDescription className="text-sm text-muted-foreground">
+                      I consent to receive text messages from <strong>Talent Fino Consulting</strong> regarding job opportunities, 
+                      interview reminders, and recruitment updates. Message frequency may vary (up to 4 messages per week). 
+                      Message and data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for assistance. 
+                      For support, email support@talentfino.com or call +1 (307) 384-8094.
+                    </FormDescription>
+                  </div>
                 </FormItem>
               )}
             />
