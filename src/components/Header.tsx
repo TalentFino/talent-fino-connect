@@ -7,11 +7,18 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
-          <SEOLinks.Home 
-            aria-label="Talent Fino - Global Recruitment Solutions | Where Talent Meets Excellence" 
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
+          <SEOLinks.Home
+            aria-label="Talent Fino - Global Recruitment Solutions | Where Talent Meets Excellence"
+            className="flex items-center gap-3"
           >
-            Talent Fino
+            <img
+              src="/favicon.svg"
+              alt="Talent Fino Logo"
+              className="w-10 h-10"
+            />
+            <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              Talent Fino
+            </span>
           </SEOLinks.Home>
           
           <div className="hidden md:flex items-center space-x-8">
