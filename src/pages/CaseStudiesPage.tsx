@@ -17,7 +17,7 @@ const CaseStudiesPage = () => {
     "description": "Real client success stories showcasing our recruitment and staffing expertise across industries",
     "mainEntity": {
       "@type": "ItemList",
-      "numberOfItems": 5,
+      "numberOfItems": 7,
       "itemListElement": [
         {
           "@type": "Article",
@@ -26,16 +26,28 @@ const CaseStudiesPage = () => {
           "description": "50 engineers placed across 3 countries in 8 weeks with 95% retention rate"
         },
         {
-          "@type": "Article", 
+          "@type": "Article",
           "@id": "#automotive-case-study",
           "name": "Automotive Innovation Team Recruitment",
           "description": "12 senior EV specialists recruited with 100% confidentiality maintained"
         },
         {
           "@type": "Article",
-          "@id": "#healthcare-case-study", 
+          "@id": "#healthcare-case-study",
           "name": "Healthcare System Expansion Staffing",
           "description": "200+ healthcare professionals placed with 100% regulatory compliance"
+        },
+        {
+          "@type": "Article",
+          "@id": "#ai-staffing-usa-case-study",
+          "name": "USA AI Staffing Expansion",
+          "description": "50+ AI & ML specialists hired in 90 days with 94% retention rate"
+        },
+        {
+          "@type": "Article",
+          "@id": "#africa-ai-hub-case-study",
+          "name": "Africa AI Hub Setup - Fintech Innovation",
+          "description": "30+ data engineers and analysts hired across 3 African countries in 60 days"
         }
       ]
     }
@@ -130,6 +142,42 @@ const CaseStudiesPage = () => {
         placements: "30",
         retention: "94%",
         satisfaction: "100%"
+      }
+    },
+    {
+      title: "USA AI Staffing Expansion",
+      industry: "Technology - AI/ML",
+      challenge: "A Fortune 500 technology client needed 50+ AI & ML specialists across data, NLP, and model-ops functions within 90 days to support their enterprise AI transformation initiative.",
+      solution: "Deployed a blended India-US hiring strategy leveraging our global talent network, combining onshore AI researchers with offshore ML engineers for optimal cost-efficiency and expertise.",
+      results: [
+        "50+ AI & ML specialists hired across data, NLP, and MLOps functions",
+        "Delivered ahead of schedule within 90 days",
+        "94% retention rate achieved in 6 months",
+        "Seamless integration of global teams across time zones"
+      ],
+      metrics: {
+        timeline: "90 days",
+        placements: "50+",
+        retention: "94%",
+        satisfaction: "96%"
+      }
+    },
+    {
+      title: "Africa AI Hub Setup - Fintech Innovation",
+      industry: "Fintech - AI Analytics",
+      challenge: "A fintech startup needed to establish its AI analytics and automation division across Nigeria, Ghana, and Kenya, requiring 30+ mid-senior data engineers and model analysts within 60 days.",
+      solution: "Leveraged our strong presence in emerging AI innovation hubs across Africa, tapping into the analytical and fintech workforce in Nigeria, Ghana, and Kenya to build a distributed AI team.",
+      results: [
+        "30+ mid-senior data engineers and model analysts hired in 60 days",
+        "Enabled faster go-to-market for AI product launch",
+        "Established presence in 3 African countries simultaneously",
+        "Cost-effective talent acquisition compared to Western markets"
+      ],
+      metrics: {
+        timeline: "60 days",
+        placements: "30+",
+        retention: "92%",
+        satisfaction: "98%"
       }
     }
   ];

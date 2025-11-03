@@ -106,6 +106,27 @@ const ServicesPage = () => {
         "Rapid Candidate Presentation"
       ],
       slug: "resume-sourcing-talent-pipeline"
+    },
+    {
+      title: "Bulk Hiring & Global Workforce Solutions",
+      description: "Fast-growing global IT & Non-IT staffing firm, specializing in mass hiring and workforce deployment across USA, India, Nigeria, Ghana, Kenya, and Brazil. We enable enterprises to build AI, Data, and LLM-driven teams at scale — connecting talent with opportunity worldwide.",
+      features: [
+        "Global reach across 6+ countries including USA, India, Nigeria, Ghana, Kenya, and Brazil",
+        "Specialized in AI/ML & LLM engineering talent acquisition",
+        "Mass hiring capabilities for enterprise-scale projects",
+        "Industry-specific talent pools: Manufacturing, Healthcare, Automotive, Aerospace, Financial Services",
+        "Pre-vetted candidates in emerging tech: Machine Learning Engineers, Data Scientists, LLM Prompt Engineers",
+        "Scalable hiring for automation, NLP, data analytics & predictive modeling roles",
+        "Strong presence in emerging AI innovation hubs across Africa and Latin America",
+        "94% average retention rate for bulk placements"
+      ],
+      process: [
+        "Global Talent Pool Assessment",
+        "Regional Market Mapping & Sourcing",
+        "Multi-Country Coordination & Screening",
+        "Rapid Deployment & Onboarding Support"
+      ],
+      slug: "bulk-hiring-global-workforce"
     }
   ];
 
