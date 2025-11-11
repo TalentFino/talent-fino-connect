@@ -92,9 +92,25 @@ export const SEOLinks = {
   ),
   
   LearnMore: (props: Omit<SEOLinkProps, 'to' | 'keywords'>) => (
-    <SEOLink 
-      to="/learn-more" 
+    <SEOLink
+      to="/learn-more"
       keywords={['recruitment information', 'staffing services', 'talent acquisition process']}
+      {...props}
+    />
+  ),
+
+  Careers: (props: Omit<SEOLinkProps, 'to' | 'keywords'>) => (
+    <SEOLink
+      to="/careers"
+      keywords={['careers', 'jobs', 'consulting careers', 'employment opportunities']}
+      {...props}
+    />
+  ),
+
+  JobOpportunities: (props: Omit<SEOLinkProps, 'to' | 'keywords'>) => (
+    <SEOLink
+      to="/job-opportunities"
+      keywords={['job opportunities', 'employment', 'job placement', 'career opportunities']}
       {...props}
     />
   ),

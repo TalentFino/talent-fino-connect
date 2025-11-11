@@ -131,6 +131,34 @@ export const PAGE_SEO_CONFIGS: Record<string, PageSEO> = {
       longTail: ['comprehensive recruitment services', 'detailed staffing solutions']
     },
     ogImage: '/og-images/learn-more-og.jpg'
+  },
+  careers: {
+    page: 'careers',
+    title: 'Careers - Join Our Team | Talent Fino',
+    description: 'Explore exciting career opportunities at Talent Fino. Upload your CV and join our team of talented professionals across tech and business roles.',
+    keywords: ['careers', 'jobs', 'recruitment careers', 'consulting jobs', 'tech careers', 'employment opportunities'],
+    h1: 'Join Our Team',
+    h2s: ['Submit Your Application', 'Career Opportunities', 'Work With Us'],
+    focusKeywords: {
+      primary: 'careers',
+      secondary: ['jobs', 'consulting careers', 'employment opportunities'],
+      longTail: ['consulting company careers', 'recruitment consulting jobs', 'career opportunities']
+    },
+    ogImage: '/og-images/careers-og.jpg'
+  },
+  'job-opportunities': {
+    page: 'job-opportunities',
+    title: 'Job Opportunities - Find Your Next Role | Talent Fino',
+    description: 'Explore exciting job opportunities across multiple locations and industries. Upload your resume and let Talent Fino connect you with top employers.',
+    keywords: ['job opportunities', 'employment', 'job placement', 'career opportunities', 'job openings', 'job search', 'resume submission'],
+    h1: 'Find Your Next Opportunity',
+    h2s: ['Featured Positions', 'Submit Your Resume', 'Open Positions'],
+    focusKeywords: {
+      primary: 'job opportunities',
+      secondary: ['employment', 'job placement', 'career opportunities'],
+      longTail: ['job opportunities multiple locations', 'career placement services', 'submit resume for jobs']
+    },
+    ogImage: '/og-images/job-opportunities-og.jpg'
   }
 };
 

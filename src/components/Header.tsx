@@ -28,20 +28,32 @@ const Header = () => {
             >
               About
             </SEOLinks.About>
-            <SEOLinks.Services 
+            <SEOLinks.Services
               className="text-foreground hover:text-primary transition-smooth"
               aria-label="Professional Recruitment & Staffing Services"
             >
               Services
             </SEOLinks.Services>
-            <SEOLinks.CaseStudies 
+            <SEOLinks.JobOpportunities
+              className="text-foreground hover:text-primary transition-smooth"
+              aria-label="Job Opportunities - Find Your Next Role"
+            >
+              Job Opportunities
+            </SEOLinks.JobOpportunities>
+            <SEOLinks.CaseStudies
               className="text-foreground hover:text-primary transition-smooth"
               aria-label="Recruitment Success Stories & Case Studies"
             >
               Case Studies
             </SEOLinks.CaseStudies>
-            <a 
-              href="#contact" 
+            <SEOLinks.Careers
+              className="text-foreground hover:text-primary transition-smooth"
+              aria-label="Careers - Join Our Team at Talent Fino"
+            >
+              Careers
+            </SEOLinks.Careers>
+            <a
+              href="#contact"
               className="text-foreground hover:text-primary transition-smooth"
               aria-label="Contact Talent Fino for recruitment and staffing services"
             >

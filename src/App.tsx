@@ -11,6 +11,8 @@ import CaseStudiesPage from "./pages/CaseStudiesPage";
 import LearnMorePage from "./pages/LearnMorePage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
+import CareersPage from "./pages/CareersPage";
+import JobOpportunitiesPage from "./pages/JobOpportunitiesPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -32,6 +34,8 @@ const App = () => (
             <Route path="/learn-more" element={<LearnMorePage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/job-opportunities" element={<JobOpportunitiesPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
