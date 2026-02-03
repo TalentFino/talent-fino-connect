@@ -61,7 +61,7 @@ const TermsAndConditionsPage = () => {
 
                 <h2 className="text-2xl font-semibold text-foreground mb-4 mt-8">Personal Information Statement</h2>
                 <p className="text-muted-foreground mb-6">
-                  <strong>We will NOT share your personal information for promotional purposes.</strong> Any personal data collected through our services is used exclusively for recruitment and staffing purposes and will only be shared with prospective employers with your explicit consent or as legally required.
+                  <strong>We do not share or sell consumer personal information (including phone numbers) to third parties or affiliates for marketing or lead generation purposes.</strong> Any personal data collected through our services is used exclusively for recruitment and staffing purposes and will only be shared with prospective employers with your explicit consent or as legally required.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-foreground mb-4 mt-8">Services Provided</h2>
@@ -80,7 +80,7 @@ const TermsAndConditionsPage = () => {
                 <div className="text-muted-foreground mb-6">
                   <p className="mb-4">By providing your mobile phone number and opting in, you consent to receive text messages from Talent Fino. The following terms apply:</p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li><strong>Type of Messages:</strong> You will receive job opportunity alerts, interview reminders, application status updates, recruitment service notifications, and other employment-related communications.</li>
+                    <li><strong>Type of Messages:</strong> You will receive job opportunity alerts (i.e., marketing and promotional messages), interview reminders, application status updates, recruitment service notifications, and other employment-related communications.</li>
                     <li><strong>Message Frequency:</strong> You may receive up to 4 messages per week. Actual frequency may vary based on job availability and your application activity.</li>
                     <li><strong>Data Rates:</strong> Message and data rates may apply based on your mobile carrier's plan. Please check with your carrier for details.</li>
                     <li><strong>Opt-Out Information:</strong> You can unsubscribe from text messages at any time by texting <strong>STOP</strong> to any message from Talent Fino. You will receive a confirmation message upon successful opt-out.</li>

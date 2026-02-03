@@ -92,7 +92,7 @@ const ScheduleConsultationDialog: React.FC<ScheduleConsultationDialogProps> = ({
       <DialogTrigger asChild>
         <Button variant={triggerVariant} size={triggerSize} className={triggerClassName}>Schedule Free Consultation</Button>
       </DialogTrigger>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Schedule a Free Consultation</DialogTitle>
           <DialogDescription>
@@ -150,7 +150,7 @@ const ScheduleConsultationDialog: React.FC<ScheduleConsultationDialogProps> = ({
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone</FormLabel>
+                    <FormLabel>Phone (optional)</FormLabel>
                     <FormControl>
                       <Input type="tel" placeholder="+1 555 123 4567" {...field} />
                     </FormControl>
@@ -303,10 +303,8 @@ const ScheduleConsultationDialog: React.FC<ScheduleConsultationDialogProps> = ({
                       SMS Consent (Optional)
                     </FormLabel>
                     <FormDescription className="text-sm text-muted-foreground">
-                      I consent to receive text messages from <strong>Talent Fino Consulting</strong> regarding job opportunities, 
-                      interview reminders, and recruitment updates. Message frequency may vary (up to 4 messages per week). 
-                      Message and data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for assistance. 
-                      For support, email support@talentfino.com or call +1 (307) 384-8094.
+                      By providing your phone number, you agree to receive calls and texts from <strong>TALENT FINO LLC</strong> regarding job offers, notification reminders and recruitment services, marketing and promotional messages. To stop receiving messages, please reply 'STOP' at any time. For more information, reply 'HELP', email support@talentfino.com or call +1 (307) 384-8094. Message and data rates may apply. Message frequency may vary. View our{" "}
+                      <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a> | <a href="/terms-and-conditions" className="text-primary hover:underline">Terms and Conditions</a>.
                     </FormDescription>
                   </div>
                 </FormItem>

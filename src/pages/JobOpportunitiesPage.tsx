@@ -36,7 +36,7 @@ const ACCEPTED_FILE_TYPES = [
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
+  phone: z.string().optional(),
   position: z.string().min(1, "Please select a position"),
   cv: z
     .instanceof(FileList)
@@ -292,7 +292,7 @@ const JobOpportunitiesPage = () => {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Phone Number *</FormLabel>
+                          <FormLabel>Phone Number (optional)</FormLabel>
                           <FormControl>
                             <Input
                               type="tel"
@@ -379,23 +379,20 @@ const JobOpportunitiesPage = () => {
                     {/* SMS Consent Disclaimer */}
                     <div className="pt-4 border-t">
                       <p className="text-xs text-muted-foreground leading-relaxed">
-                        By providing your phone number, you agree to receive text messages from Talent Fino.
-                        Message and data rates may apply. Reply STOP to opt out, or reply HELP for assistance.
-                        Please refer to our{" "}
-                        <a
-                          href="/terms-and-conditions"
-                          className="text-primary hover:underline"
-                        >
-                          Terms
-                        </a>{" "}
-                        and{" "}
+                        By providing your phone number, you agree to receive calls and texts from TALENT FINO LLC regarding job offers, notification reminders and recruitment services, marketing and promotional messages. To stop receiving messages, please reply 'STOP' at any time. For more information, reply 'HELP', email support@talentfino.com or call +1 (307) 384-8094. Message and data rates may apply. Message frequency may vary. View our{" "}
                         <a
                           href="/privacy-policy"
                           className="text-primary hover:underline"
                         >
                           Privacy Policy
                         </a>{" "}
-                        for more information.
+                        |{" "}
+                        <a
+                          href="/terms-and-conditions"
+                          className="text-primary hover:underline"
+                        >
+                          Terms and Conditions
+                        </a>.
                       </p>
                     </div>
 
