@@ -9,11 +9,13 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -48,6 +50,7 @@ const formSchema = z.object({
       (files) => ACCEPTED_FILE_TYPES.includes(files?.[0]?.type),
       "Only PDF and Word documents are accepted"
     ),
+  smsConsent: z.boolean().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -81,6 +84,7 @@ const CareersPage = () => {
       email: "",
       phone: "",
       position: "",
+      smsConsent: false,
     },
   });
 
@@ -312,25 +316,30 @@ const CareersPage = () => {
                       )}
                     />
 
-                    {/* SMS Consent Disclaimer */}
-                    <div className="pt-4 border-t">
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        By providing your phone number, you agree to receive calls and texts from TALENT FINO LLC regarding job offers, notification reminders and recruitment services, marketing and promotional messages. To stop receiving messages, please reply 'STOP' at any time. For more information, reply 'HELP', email support@talentfino.com or call +1 (307) 384-8094. Message and data rates may apply. Message frequency may vary. View our{" "}
-                        <a
-                          href="/privacy-policy"
-                          className="text-primary hover:underline"
-                        >
-                          Privacy Policy
-                        </a>{" "}
-                        |{" "}
-                        <a
-                          href="/terms-and-conditions"
-                          className="text-primary hover:underline"
-                        >
-                          Terms and Conditions
-                        </a>.
-                      </p>
-                    </div>
+                    {/* SMS Consent Checkbox */}
+                    <FormField
+                      control={form.control}
+                      name="smsConsent"
+                      render={({ field }) => (
+                        <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border border-border p-4 bg-muted/30">
+                          <FormControl>
+                            <Checkbox
+                              checked={field.value}
+                              onCheckedChange={field.onChange}
+                            />
+                          </FormControl>
+                          <div className="space-y-1 leading-none">
+                            <FormLabel className="text-sm font-medium">
+                              SMS Consent (Optional)
+                            </FormLabel>
+                            <FormDescription className="text-xs text-muted-foreground leading-relaxed">
+                              By providing your phone number, you agree to receive calls and texts from <strong>TALENT FINO LLC</strong> regarding job offers, notification reminders and recruitment services, marketing and promotional messages. To stop receiving messages, please reply 'STOP' at any time. For more information, reply 'HELP', email support@talentfino.com or call +1 (307) 384-8094. Message and data rates may apply. Message frequency may vary. View our{" "}
+                              <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a> | <a href="/terms-and-conditions" className="text-primary hover:underline">Terms and Conditions</a>.
+                            </FormDescription>
+                          </div>
+                        </FormItem>
+                      )}
+                    />
 
                     {/* Submit Button */}
                     <Button

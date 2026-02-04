@@ -75,6 +75,7 @@ const FormSchema = z.object({
   agree: z.boolean().refine((v) => v === true, {
     message: "You must accept the terms to proceed",
   }),
+  smsConsent: z.boolean().optional(),
 });
 
 type FormValues = z.infer<typeof FormSchema>;
@@ -105,6 +106,7 @@ const GetStartedDialog: React.FC<GetStartedDialogProps> = ({
       startDate: undefined,
       notes: "",
       agree: false,
+      smsConsent: false,
     },
   });
 
@@ -400,7 +402,31 @@ const GetStartedDialog: React.FC<GetStartedDialogProps> = ({
                       I agree to be contacted and to the preliminary staffing terms.
                     </FormLabel>
                     <FormDescription>
-                      We’ll email you a summary and next steps.
+                      We'll email you a summary and next steps.
+                    </FormDescription>
+                  </div>
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="smsConsent"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border border-border p-4 bg-muted/30">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel className="text-sm font-medium">
+                      SMS Consent (Optional)
+                    </FormLabel>
+                    <FormDescription className="text-xs text-muted-foreground leading-relaxed">
+                      By providing your phone number, you agree to receive calls and texts from <strong>TALENT FINO LLC</strong> regarding job offers, notification reminders and recruitment services, marketing and promotional messages. To stop receiving messages, please reply 'STOP' at any time. For more information, reply 'HELP', email support@talentfino.com or call +1 (307) 384-8094. Message and data rates may apply. Message frequency may vary. View our{" "}
+                      <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a> | <a href="/terms-and-conditions" className="text-primary hover:underline">Terms and Conditions</a>.
                     </FormDescription>
                   </div>
                 </FormItem>
